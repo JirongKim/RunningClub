@@ -11,7 +11,7 @@ import android.widget.ImageView;
 
     Button m_btn;
     ImageView imageView;
-    boolean i = true;
+    int i = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,14 +24,19 @@ import android.widget.ImageView;
         m_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (i==true){
+                if (i==0){
                     imageView.setImageResource(R.drawable.bbangdol_laying);
-                    i=false;
+                    i++;
                 }
-                else
+                else if(i==1)
                 {
                     imageView.setImageResource(R.drawable.bbangdol_seating);
-                    i=true;
+                    i++;
+                }
+                else if(i==2)
+                {
+                    imageView.setImageResource(R.drawable.bbangdol_standing);
+                    i=0;
                 }
             }
         });
